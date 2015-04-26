@@ -74,7 +74,6 @@ var InitializeView = (function ($) {
         } catch (ex) {
             args = args || "";
             console.log("View Initialization Error. " + ex.message);
-			alert(ex.message);
             return null;
         }
     };
@@ -97,25 +96,11 @@ var InitializeView = (function ($) {
             args = args || "";
             views = views || {};
             console.log("View Initialization Error. "+ ex.message);
-			alert(ex.message);
             return views;
         }
     };
 
 })(jQuery);
-
-function loadXMLDoc(filename) {
-    if (window.XMLHttpRequest) {
-        xhttp = new XMLHttpRequest();
-    }
-    else // code for IE5 and IE6
-    {
-        xhttp = new ActiveXObject("Microsoft.XMLHTTP");
-    }
-    xhttp.open("GET", filename, false);
-    xhttp.send();
-    return xhttp.responseXML;
-}
 
 function guid() {
     function s4() {
