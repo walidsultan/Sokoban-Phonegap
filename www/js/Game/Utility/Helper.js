@@ -74,6 +74,7 @@ var InitializeView = (function ($) {
         } catch (ex) {
             args = args || "";
             console.log("View Initialization Error. " + ex.message);
+			alert(ex.message);
             return null;
         }
     };
@@ -96,6 +97,7 @@ var InitializeView = (function ($) {
             args = args || "";
             views = views || {};
             console.log("View Initialization Error. "+ ex.message);
+			alert(ex.message);
             return views;
         }
     };
