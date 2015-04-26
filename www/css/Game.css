@@ -1,0 +1,120 @@
+body {
+  /* prevent callout to copy image, etc when tap to hold */
+  -webkit-touch-callout: none;
+  /* prevent webkit from resizing text to fit */
+  -webkit-text-size-adjust: none;
+  /* prevent copy paste, to allow, change 'none' to 'text' */
+  -webkit-user-select: none;
+}
+body.sokoban {
+  background-image: url('../Images/interface.png');
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 1280px;
+  margin: 0;
+}
+body.menu {
+  background-image: url('../Images/menu.png');
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 1280px;
+}
+.block {
+  position: absolute;
+  background-size: 60px;
+  width: 60px;
+  height: 60px;
+  background-repeat: no-repeat;
+}
+.block.wall {
+  background-image: url('../Images/Wall.png');
+}
+.block.box {
+  background-image: url('../Images/Box.png');
+  z-index: 5;
+  cursor: pointer;
+}
+.block.box.onTarget {
+  background-image: url('../Images/BoxOnTarget.png');
+}
+.block.box.selected {
+  background-image: url('../Images/greenBox.png');
+}
+.block.floor {
+  background-image: url('../Images/Floor.png');
+}
+.block.target {
+  background-image: url('../Images/Target.png');
+}
+.block.player {
+  background-image: url('../Images/Ghost.png');
+  z-index: 10;
+}
+.gameContainer {
+  position: relative;
+}
+.gameStatus {
+  position: absolute;
+}
+.gameStatus div {
+  display: inline-block;
+}
+.menuContainer {
+  text-align: center;
+  color: #fff;
+}
+.menuContainer div {
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+.menuContainer div.disabled {
+  color: #aaa;
+  cursor: default;
+}
+.sffNavigator {
+  display: none;
+}
+.errorBlock {
+  display: none;
+  position: absolute;
+  border: solid 3px #ff0000;
+}
+@media screen and (max-width: 900px), screen and (max-height: 680px) {
+  body.sokoban {
+    background: none;
+  }
+  body.menu {
+    background-color: #006bb0;
+  }
+  .gameStatus {
+    display: none;
+  }
+  .sffNavigator {
+    display: block;
+    position: absolute;
+    top: 10px;
+    width: 100%;
+  }
+  .sffNavigator .icon {
+    width: 22px;
+    height: 22px;
+    background-size: 22px;
+    position: absolute;
+    cursor: pointer;
+  }
+  .sffNavigator .icon.reload {
+    left: 5%;
+    background-image: url(../Images/reload.png);
+  }
+  .sffNavigator .icon.back {
+    right: 5%;
+    background-image: url(../Images/backArrow.png);
+  }
+  .ui-dialog {
+    top: 0 !important;
+    left: 0 !important;
+    width: 99% !important;
+    height: 99% !important;
+    padding: 0;
+  }
+}
