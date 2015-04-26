@@ -24,6 +24,10 @@
 				alert(levelId);
                 $(window).trigger('updateLevelName', levelId);
                 $(window).trigger('setLevelDimensions', { width: levelWidth, height: levelHeight });
+            }).fail(function (jqXHR, textStatus, errorThrown) {
+                alert(jqXHR);
+                alert(textStatus);
+                alert(errorThrown);
             });
         },
         getLevelPath: function () {
