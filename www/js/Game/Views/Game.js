@@ -31,12 +31,12 @@
             InitializeView('app.ui.CollisionDetector');
             InitializeView('app.ui.LevelLoader');
 
-            $(window).trigger('setLevelIndex', this.levelIndex);
+            $(window).trigger('setLevelIndex', 1);
             $('.sffNavigator .back').click(this.undoLastMovement.bind(this));
             $('.sffNavigator .reload').click(this.reloadLevel.bind(this));
         },
         setGameIndex: function (e, levelIndex) {
-            this.levelIndex = levelIndex;
+            //this.levelIndex = levelIndex;
         },
         setFF: function (e, isSFF) {
             this.isSFF = isSFF;
