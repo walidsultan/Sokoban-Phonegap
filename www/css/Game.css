@@ -7,14 +7,14 @@ body {
   -webkit-user-select: none;
 }
 body.sokoban {
-  background-image: url('../Images/interface.png');
+  background-image: url('../img/interface.png');
   background-repeat: no-repeat;
   background-position: top center;
   background-size: 1280px;
   margin: 0;
 }
 body.menu {
-  background-image: url('../Images/menu.png');
+  background-image: url('../img/menu.png');
   background-repeat: no-repeat;
   background-position: top center;
   background-size: 1280px;
@@ -27,27 +27,27 @@ body.menu {
   background-repeat: no-repeat;
 }
 .block.wall {
-  background-image: url('../Images/Wall.png');
+  background-image: url('../img/Wall.png');
 }
 .block.box {
-  background-image: url('../Images/Box.png');
+  background-image: url('../img/Box.png');
   z-index: 5;
   cursor: pointer;
 }
 .block.box.onTarget {
-  background-image: url('../Images/BoxOnTarget.png');
+  background-image: url('../img/BoxOnTarget.png');
 }
 .block.box.selected {
-  background-image: url('../Images/greenBox.png');
+  background-image: url('../img/greenBox.png');
 }
 .block.floor {
-  background-image: url('../Images/Floor.png');
+  background-image: url('../img/Floor.png');
 }
 .block.target {
-  background-image: url('../Images/Target.png');
+  background-image: url('../img/Target.png');
 }
 .block.player {
-  background-image: url('../Images/Ghost.png');
+  background-image: url('../img/Ghost.png');
   z-index: 10;
 }
 .gameContainer {
@@ -104,11 +104,11 @@ body.menu {
   }
   .sffNavigator .icon.reload {
     left: 5%;
-    background-image: url(../Images/reload.png);
+    background-image: url(../img/reload.png);
   }
   .sffNavigator .icon.back {
     right: 5%;
-    background-image: url(../Images/backArrow.png);
+    background-image: url(../img/backArrow.png);
   }
   .ui-dialog {
     top: 0 !important;
