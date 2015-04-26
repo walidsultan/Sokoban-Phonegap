@@ -14,21 +14,15 @@
         },
         loadXMLDoc: function (levelPath) {
             var me = this;
-			alert(levelPath);
-            $.get(levelPath, function (data) {
+            $('.gameContainer').load(levelPath, function (data) {
                 me.levelRows = data.getElementsByTagName("L");
                 me.levelRendered = false;
                 var levelIdentifier = data.getElementsByTagName("Level");
                 var levelWidth = levelIdentifier[0].getAttribute('Width');
                 var levelHeight = levelIdentifier[0].getAttribute('Height');
                 var levelId = levelIdentifier[0].getAttribute('Id');
-				alert(levelId);
                 $(window).trigger('updateLevelName', levelId);
                 $(window).trigger('setLevelDimensions', { width: levelWidth, height: levelHeight });
-            }).fail(function (jqXHR, textStatus, errorThrown) {
-                alert(jqXHR.statusText);
-                alert(textStatus);
-                alert(errorThrown);
             });
         },
         getLevelPath: function () {
