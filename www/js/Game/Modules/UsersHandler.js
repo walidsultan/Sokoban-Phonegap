@@ -1,7 +1,9 @@
 ﻿(function (ns) {
     ns.UsersHandler = skui.extend(function () {
         this.levelIndex = 1;
+		alert('checkCookie');
         var userCookie = this.getCookie('sokobanUser');
+		alert('Cookie checked');
         if (userCookie != '') {
             userCookie = JSON.parse(userCookie);
             this.levelIndex = userCookie.levelIndex;
