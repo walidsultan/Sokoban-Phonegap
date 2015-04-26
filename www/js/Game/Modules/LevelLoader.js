@@ -14,6 +14,7 @@
         },
         loadXMLDoc: function (levelPath) {
             var me = this;
+			alert(levelPath);
             $.get(levelPath, function (data) {
                 me.levelRows = data.getElementsByTagName("L");
                 me.levelRendered = false;
@@ -25,7 +26,7 @@
                 $(window).trigger('updateLevelName', levelId);
                 $(window).trigger('setLevelDimensions', { width: levelWidth, height: levelHeight });
             }).fail(function (jqXHR, textStatus, errorThrown) {
-                alert(jqXHR);
+                alert(jqXHR.statusText);
                 alert(textStatus);
                 alert(errorThrown);
             });
