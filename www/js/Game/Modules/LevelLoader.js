@@ -9,6 +9,7 @@
         init: function () {
             $('body').prop('class', 'sokoban');
             var levelPath = this.getLevelPath();
+			alert(levelPath);
             var levelDoc = loadXMLDoc(levelPath);
             this.levelRows = levelDoc.getElementsByTagName("L");
             this.levelRendered = false;
@@ -89,6 +90,7 @@
             $(window).trigger('reloadLevel');
         },
         setLevelIndex: function (e, data) {
+			alert(data);
             this.levelIndex = data;
             this.init();
         },
