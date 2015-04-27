@@ -87,7 +87,7 @@
         },
         highlightError: function (e, targetBlock) {
             var borderWidth = parseInt($('.errorBlock').css('border-left-width'));
-            $('.errorBlock').appendTo('.gameContainer').css({
+            $('.errorBlock').clone().appendTo('.gameContainer').css({
                 'left': targetBlock.domElement.position().left,
                 'top': targetBlock.domElement.position().top,
                 'width': targetBlock.domElement[0].getBoundingClientRect().width - borderWidth*2,
@@ -97,9 +97,7 @@
 
             var me = this;
             setTimeout(function () {
-                $('.errorBlock').appendTo('.gameContainer').css({
-                    'display': 'none'
-                });
+                $('.gameContainer .errorBlock').remove();
             }, 500);
         }
     });
