@@ -21,6 +21,8 @@
                 var levelWidth = levelIdentifier[0].getAttribute('Width');
                 var levelHeight = levelIdentifier[0].getAttribute('Height');
                 var levelId = levelIdentifier[0].getAttribute('Id');
+				                alert(levelId);
+
                 $(window).trigger('updateLevelName', levelId);
                 $(window).trigger('setLevelDimensions', { width: levelWidth, height: levelHeight });
             });
