@@ -39,9 +39,9 @@
             var zoomFactor = 0;
 
             if (zoomFactorMax * this.levelWidth <= windowWidth * this.contentWidthRatio && zoomFactorMax * this.levelHeight <= windowHeight * this.contentHeightRatio) {
-                zoomFactor = zoomFactorMax;
+                zoomFactor = Math.round(zoomFactorMax);
             } else {
-                zoomFactor = Math.min(zoomFactorWidth, zoomFactorHeight);
+                zoomFactor = Math.round(Math.min(zoomFactorWidth, zoomFactorHeight));
             }
 
             if (windowWidth >= windowHeight * this.backgroundRatio) {
