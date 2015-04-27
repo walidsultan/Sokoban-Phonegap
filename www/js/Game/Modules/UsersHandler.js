@@ -12,7 +12,7 @@
             };
             this.setCookie('sokobanUser', JSON.stringify(sokobanUser), 365);
         }
-        $(window).on('levelSolved', this.saveUserLevelIndex.bind(this));
+       // $(window).on('levelSolved', this.saveUserLevelIndex.bind(this));
         $(window).on('setLevelIndex', this.setCurrentLevelIndex.bind(this));
 
         $(window).trigger('loadMenu', { levelIndex: this.levelIndex });
