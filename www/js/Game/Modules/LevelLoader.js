@@ -27,7 +27,7 @@
         },
         getLevelPath: function () {
             if (this.levelIndex <= 3) {
-                return 'Levels/Easy/level' + this.levelIndex + '.xml';
+                return 'Levels/Easy/level' + this.levelIndex + '.gam';
             }
             else if (this.levelIndex <= 11) {
                 return 'Levels/SokobanJunior/level' + (this.levelIndex - 3) + '.xml';
