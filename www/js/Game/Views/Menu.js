@@ -9,7 +9,7 @@
         loadMenu: function (e, data) {
             $('body').prop('class', 'menu');
             this.levelIndex = data.levelIndex;
-            $('body .menuContainer').load('Views/Menu.html', this.menuLoaded.bind(this));
+            $('body .menuContainer').load('Levels/Easy/Level1.xml', this.menuLoaded.bind(this));
             $(window).trigger('setLevelDimensions', { width: $(window).width(), height: $(window).height() });
             this.setMenuDimensions();
         },
