@@ -15,6 +15,7 @@
         loadXMLDoc: function (levelPath) {
             var me = this;
             $('.gameContainer').load(levelPath, function (data) {
+			alert(data);
                 me.levelRows = data.getElementsByTagName("L");
                 me.levelRendered = false;
                 var levelIdentifier = data.getElementsByTagName("Level");
@@ -27,7 +28,7 @@
         },
         getLevelPath: function () {
             if (this.levelIndex <= 3) {
-                return 'Levels/Easy/level' + this.levelIndex + '.gam';
+                return 'Levels/Easy/level' + this.levelIndex + '.html';
             }
             else if (this.levelIndex <= 11) {
                 return 'Levels/SokobanJunior/level' + (this.levelIndex - 3) + '.xml';
