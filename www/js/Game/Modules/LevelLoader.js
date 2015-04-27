@@ -14,7 +14,10 @@
         },
         loadXMLDoc: function (levelPath) {
             var me = this;
+			                alert(levelPath);
+
             $.get(levelPath, function (data) {
+			alert(data);
                 me.levelRows = data.getElementsByTagName("L");
                 me.levelRendered = false;
                 var levelIdentifier = data.getElementsByTagName("Level");
