@@ -45,7 +45,7 @@
             else if (this.levelIndex <= 11) {
                 return 'Levels/SokobanJunior/Level' + (this.levelIndex - 3) + '.xml';
             } else {
-                return 'Levels/MicroCosmos/Level' + (this.levelIndex - 11) + '.xml';
+                return 'Levels/MicroCosmos/level' + (this.levelIndex - 11) + '.xml';
             }
         },
         drawLevel: function (e) {

@@ -68,7 +68,7 @@
                 //Get moves and pushes count
                 var movesCount = this.historyStack.filter(function (data) { return data.block.type == ObjectType.player; }).length;
                 var pushesCount = this.historyStack.filter(function (data) { return data.block.type == ObjectType.box; }).length;
-alert('level solved');
+
                 $(window).trigger('levelSolved', { movesCount: movesCount, pushesCount: pushesCount });
             }
         },
