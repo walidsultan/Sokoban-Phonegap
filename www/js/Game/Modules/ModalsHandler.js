@@ -1,10 +1,10 @@
 ﻿(function (ns) {
     ns.ModalsHandler = skui.extend(function () {
-        $(window).on('levelSolved', this.showLevelSolvedDialog.bind(this));
+        $(window).on('showLevelSolvedDialog', this.showLevelSolvedDialog.bind(this));
     }, {
         showLevelSolvedDialog: function (e, data) {
             $('.dialog').prop('title', 'Level Solved');
-            $('.dialog').html('Congratulations! Level Solved in ' + data.movesCount + ' moves and ' + data.pushesCount + ' pushes');
+            $('.dialog').html('Congratulations! You solved the level. <br/><br/>Moves: ' + data.movesCount + '<br/>Pushes: ' + data.pushesCount + '<br/>Time: ' + data.time);
             $('.dialog').dialog({
                 minWidth: 420,
                 modal: true,
@@ -22,8 +22,15 @@
                        }
 
                    }
-                ]
+                ],
+                create: function () {
+                    //Set next button size
+                    $(' .ui-dialog-buttonpane button').css('width', skui.zoomFactor)
+                                                 .css('height', skui.zoomFactor)
+                                                 .css('backgroundSize', skui.zoomFactor);
+                }
             });
         }
     });
 })(skui.resolve('app.ui'));
+

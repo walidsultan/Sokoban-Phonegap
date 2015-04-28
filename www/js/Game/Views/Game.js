@@ -53,6 +53,7 @@
         onLevelSolved: function () {
             clearInterval(this.intervalId);
             this.intervalId = null;
+            $(window).trigger('showLevelSolvedDialog', { movesCount: this.movesCount, pushesCount: this.pushesCount, time: this.gameTime });
         },
         updateMovementStatus: function (e, data) {
             if (data.block.type == ObjectType.box) {

@@ -65,11 +65,7 @@
         isLevelSolved: function () {
             var boxes = this.allBlocks.filter(function (block) { return block.type == ObjectType.box && !block.isOnTarget; });
             if (boxes.length == 0) {
-                //Get moves and pushes count
-                var movesCount = this.historyStack.filter(function (data) { return data.block.type == ObjectType.player; }).length;
-                var pushesCount = this.historyStack.filter(function (data) { return data.block.type == ObjectType.box; }).length;
-
-                $(window).trigger('levelSolved', { movesCount: movesCount, pushesCount: pushesCount });
+                 $(window).trigger('levelSolved');
             }
         },
         clearBlocks: function () {
