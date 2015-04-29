@@ -32,8 +32,8 @@
             InitializeView('app.ui.LevelLoader');
 
             $(window).trigger('setLevelIndex', this.levelIndex);
-            $('.sffNavigator .back').mousedown(this.onBackMouseDown.bind(this));
-            $('.sffNavigator .back').mouseup(this.onBackMouseUp.bind(this));
+            $('.sffNavigator .back').on('touchstart mousedown',this.onBackMouseDown.bind(this));
+            $('.sffNavigator .back').on('touchend mouseup', this.onBackMouseUp.bind(this));
             $('.sffNavigator .reload').click(this.reloadLevel.bind(this));
         },
         setGameIndex: function (e, levelIndex) {
