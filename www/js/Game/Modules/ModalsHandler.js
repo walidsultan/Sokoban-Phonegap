@@ -23,11 +23,8 @@
 
                    }
                 ],
-                create: function () {
-                    //Set next button size
-                    $(' .ui-dialog-buttonpane button').css('width', skui.zoomFactor)
-                                                 .css('height', skui.zoomFactor)
-                                                 .css('backgroundSize', skui.zoomFactor);
+                open: function () {
+                    $('.ui-dialog :button').blur();
                 }
             });
         }

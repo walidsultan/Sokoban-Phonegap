@@ -111,35 +111,51 @@ body.menu {
     background-image: url(../img/backArrow.png);
   }
   .ui-dialog {
-    top: 2% !important;
+    top: 1.5% !important;
     left: 2% !important;
-    width: 95% !important;
-    height: 95% !important;
-    border-radius: 135px;
-    padding: 0;
+    width: 89% !important;
+    height: 93% !important;
+    border-radius: 8px;
+    padding: 10px 3% 0;
   }
   .ui-dialog .ui-dialog-titlebar {
     background: none;
-    text-align: center;
     border: none;
-    color: #26C920;
-    padding-top: 9%;
+    color: #333;
+    padding-bottom: 24px;
+    border-bottom: solid 1px #666;
+    border-radius: 0;
   }
-  .ui-dialog .ui-dialog-titlebar button {
-    display: none;
+  .ui-dialog .ui-dialog-titlebar .ui-dialog-titlebar-close {
+    border: none;
+    background: none;
+    top: 12px;
+  }
+  .ui-dialog .ui-dialog-titlebar .ui-dialog-titlebar-close .ui-icon-closethick {
+    background: url('../img/X_mark.png');
+    width: 30px;
+    margin-left: -25px;
+    height: 34px;
+    background-size: 30px;
   }
   .ui-dialog .ui-dialog-content {
-    color: #26C920;
-    margin-top: 5%;
+    color: #666;
+    margin-top: 2%;
   }
   .ui-dialog .ui-dialog-buttonpane {
     border: 0;
+    margin: 0;
+    padding: 0;
   }
   .ui-dialog .ui-dialog-buttonpane button {
-    background: url('../img/next.png');
+    background-image: url('../img/next.png');
     border: none;
     color: transparent;
     background-color: transparent;
+    background-size: 58px;
+    padding: 0;
+    width: 52px;
+    height: 52px;
   }
   .ui-dialog .ui-dialog-buttonpane button:focus {
     border: none;
