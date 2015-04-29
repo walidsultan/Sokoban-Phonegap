@@ -14,6 +14,7 @@
         this.gameTime = 0;
         this.movesCount = 0;
         this.pushesCount = 0;
+        this.lastMouseDownTime = 0;
 
         this.loadGame();
     }, {
@@ -81,16 +82,20 @@
             this.pushesCount--;
             $('body .gameStatusContainer .pushesCount').text(this.pushesCount);
         },
-        onBackMouseDown: function () {
-            this.mouseDown = true;
-            this.undoLastMovement();
+        onBackMouseDown: function (e) {
+            var currentTime = (new Date()).getTime();
+            if (!this.mouseDown && (currentTime-this.lastMouseDownTime)>200) {
+                this.mouseDown = true;
+                this.lastMouseDownTime = currentTime;
+                this.undoLastMovement();
+            }
         },
         undoLastMovement: function () {
             if(!this.mouseDown) return;
 
             $(window).trigger('undoLastMovement');
 
-            setTimeout(this.undoLastMovement.bind(this),200);
+            setTimeout(this.undoLastMovement.bind(this), 200);
         },
         onBackMouseUp: function () {
             this.mouseDown = false;
