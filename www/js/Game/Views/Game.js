@@ -32,7 +32,8 @@
             InitializeView('app.ui.LevelLoader');
 
             $(window).trigger('setLevelIndex', this.levelIndex);
-            $('.sffNavigator .back').click(this.undoLastMovement.bind(this));
+            $('.sffNavigator .back').mousedown(this.onBackMouseDown.bind(this));
+            $('.sffNavigator .back').mouseup(this.onBackMouseUp.bind(this));
             $('.sffNavigator .reload').click(this.reloadLevel.bind(this));
         },
         setGameIndex: function (e, levelIndex) {
@@ -80,8 +81,19 @@
             this.pushesCount--;
             $('body .gameStatusContainer .pushesCount').text(this.pushesCount);
         },
+        onBackMouseDown: function () {
+            this.mouseDown = true;
+            this.undoLastMovement();
+        },
         undoLastMovement: function () {
+            if(!this.mouseDown) return;
+
             $(window).trigger('undoLastMovement');
+
+            setTimeout(this.undoLastMovement.bind(this),200);
+        },
+        onBackMouseUp: function () {
+            this.mouseDown = false;
         },
         reloadLevel: function () {
             $(window).trigger('reloadLevel');

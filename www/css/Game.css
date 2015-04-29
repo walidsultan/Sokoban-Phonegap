@@ -108,7 +108,7 @@ body.menu {
   }
   .sffNavigator .icon.back {
     right: 5%;
-    background-image: url(../img/backArrow.png);
+    background-image: url(../img/undo.png);
   }
   .ui-dialog {
     top: 1.5% !important;
