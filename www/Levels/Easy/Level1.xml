@@ -1,13 +1,12 @@
-<?xml version='1.0' encoding='utf-8'?>
-<Level Height="8" Width="5" Id="Level 1">
-  <L>#####</L>
-  <L>#...#</L>
-  <L>#   #</L>
-  <L>#   #</L>
-  <L>#$$$#</L>
-  <L>#   #</L>
-  <L># @ #</L>
-  <L>#####</L>
+<Level Height="8" Width="9" Id="Level 1">
+  <L>#########</L>
+  <L>#  ...  #</L>
+  <L>#       #</L>
+  <L>#       #</L>
+  <L>###$$$###</L>
+  <L>#       #</L>
+  <L>#   @   #</L>
+  <L>#########</L>
 </Level>
 
 
