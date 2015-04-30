@@ -102,6 +102,19 @@ var InitializeView = (function ($) {
 
 })(jQuery);
 
+function loadXMLDoc(filename) {
+    if (window.XMLHttpRequest) {
+        xhttp = new XMLHttpRequest();
+    }
+    else // code for IE5 and IE6
+    {
+        xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xhttp.open("GET", filename, false);
+    xhttp.send();
+    return xhttp.responseXML;
+}
+
 function guid() {
     function s4() {
         return Math.floor((1 + Math.random()) * 0x10000)
