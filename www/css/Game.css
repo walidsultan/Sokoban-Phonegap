@@ -79,7 +79,7 @@ body.menu {
   position: absolute;
   border: solid 3px #ff0000;
 }
-@media screen and (max-width: 900px), screen and (max-height: 680px) {
+
   body.sokoban {
     background: none;
   }
@@ -164,4 +164,4 @@ body.menu {
   .ui-dialog .ui-dialog-buttonpane .ui-icon {
     display: none;
   }
-}
+
