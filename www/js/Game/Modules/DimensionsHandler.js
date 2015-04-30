@@ -10,7 +10,7 @@
             var windowWidth = $(window).width();
             var windowHeight = $(window).height();
             var windowSize = 0;
-            var isSFF = windowWidth <= this.SFFWidth || windowHeight <= this.SFFHeight;
+            var isSFF = windowWidth <= this.SFFWidth || windowHeight <= this.SFFHeight || isMobile();
             $(window).trigger('setFF', isSFF);
             if (isSFF) {
                 this.contentHeightRatio = .95;
