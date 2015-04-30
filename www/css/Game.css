@@ -111,25 +111,25 @@ body.menu {
     background-image: url(../img/undo.png);
   }
   .ui-dialog {
-    top: 1.5% !important;
-    left: 2% !important;
+    top: 3% !important;
+    left: 2.5% !important;
     width: 89% !important;
-    height: 93% !important;
+    height: 94% !important;
     border-radius: 8px;
-    padding: 10px 3% 0;
+    padding: 0 3%;
   }
   .ui-dialog .ui-dialog-titlebar {
     background: none;
     border: none;
     color: #333;
-    padding-bottom: 24px;
+    padding: 24px 0;
     border-bottom: solid 1px #666;
     border-radius: 0;
   }
   .ui-dialog .ui-dialog-titlebar .ui-dialog-titlebar-close {
     border: none;
     background: none;
-    top: 12px;
+    top: 24px;
   }
   .ui-dialog .ui-dialog-titlebar .ui-dialog-titlebar-close .ui-icon-closethick {
     background: url('../img/X_mark.png');
@@ -141,6 +141,7 @@ body.menu {
   .ui-dialog .ui-dialog-content {
     color: #666;
     margin-top: 2%;
+    padding: .5em 0;
   }
   .ui-dialog .ui-dialog-buttonpane {
     border: 0;
@@ -154,8 +155,8 @@ body.menu {
     background-color: transparent;
     background-size: 58px;
     padding: 0;
-    width: 52px;
-    height: 52px;
+    width: 58px;
+    height: 58px;
   }
   .ui-dialog .ui-dialog-buttonpane button:focus {
     border: none;
