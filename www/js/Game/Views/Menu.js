@@ -14,6 +14,8 @@
             this.setMenuDimensions();
         },
         setMenuDimensions: function () {
+            $(window).trigger('setLevelDimensions', { width: $(window).width(), height: $(window).height() });
+
             var windowHeight = $(window).height();
             var windowWidth = $(window).width();
             var menuZoomFactor = 23;
@@ -25,7 +27,7 @@
                 wideWindowTopMargin = (windowWidth / windowHeight) * wideMarginFactor;
             }
 
-            var marginTop = (windowHeight - $('body .menuContainer').height()) / 2;
+            var marginTop = (windowHeight) / 2;
             $('body .menuContainer').css('marginTop', marginTop + wideWindowTopMargin);
         },
         menuLoaded: function () {
