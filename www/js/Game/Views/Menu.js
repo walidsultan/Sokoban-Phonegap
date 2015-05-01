@@ -49,7 +49,7 @@
                 }
             });
             $('body .menuContainer .howToPlay').click(function () {
-                window.open('https://youtu.be/RBYWxzooN8M', '_blank');
+                window.open('https://youtu.be/RBYWxzooN8M', '_system');
             });
            
         },
