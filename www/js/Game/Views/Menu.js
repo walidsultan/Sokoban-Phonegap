@@ -48,6 +48,10 @@
                     $(window).trigger('setGameIndex', [me.levelIndex]);
                 }
             });
+            $('body .menuContainer .howToPlay').click(function () {
+                window.open('https://youtu.be/RBYWxzooN8M', '_blank');
+            });
+           
         },
         unloadMenu: function () {
             $('body').prop('class', '');
