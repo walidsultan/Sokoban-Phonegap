@@ -3,6 +3,7 @@
         $(window).on('resize.menu', this.setMenuDimensions.bind(this));
         $(window).on('loadMenu', this.loadMenu.bind(this));
 
+	InitializeView('app.ui.DatabaseHandler');
         InitializeView('app.ui.DimensionsHandler');
         InitializeView('app.ui.UsersHandler');
     }, {

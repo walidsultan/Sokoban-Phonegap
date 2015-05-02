@@ -11,6 +11,7 @@
                 levelIndex: 1
             };
             localStorage.setItem('sokobanUser', JSON.stringify(sokobanUser));
+			 $(window).trigger('addUserToDB', sokobanUser);
         }
         $(window).on('levelSolved', this.saveUserLevelIndex.bind(this));
         $(window).on('setLevelIndex', this.setCurrentLevelIndex.bind(this));
