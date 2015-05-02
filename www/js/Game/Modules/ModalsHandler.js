@@ -4,7 +4,7 @@
     }, {
         showLevelSolvedDialog: function (e, data) {
             $('.dialog').prop('title', 'Level Solved');
-            $('.dialog').html('Congratulations! You solved ' + data.levelId + '. <br/><br/>Moves: ' + data.movesCount + '<br/>Pushes: ' + data.pushesCount + '<br/>Time: ' + data.time);
+            $('.dialog').html('Congratulations! You have solved ' + data.levelId + '. <br/><br/>Moves: ' + data.movesCount + '<br/>Pushes: ' + data.pushesCount + '<br/>Time: ' + data.time);
             $('.dialog').dialog({
                 minWidth: 420,
                 modal: true,
