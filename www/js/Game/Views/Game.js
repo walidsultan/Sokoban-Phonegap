@@ -26,6 +26,7 @@
             $('body .gameStatusContainer').load('Views/Game.html', this.gameViewLoaded.bind(this));
         },
         gameViewLoaded: function () {
+			InitializeView('app.ui.SwipeHandler');
             InitializeView('app.ui.KeyboardHandler');
             InitializeView('app.ui.ModalsHandler');
             InitializeView('app.ui.StateManager');
