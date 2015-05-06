@@ -110,6 +110,15 @@ body.menu {
     right: 5%;
     background-image: url(../img/undo.png);
   }
+  .sffNavigator .timer {
+    display: block;
+	position: absolute;
+	background: white;
+	color: #666666;
+	margin: 0 auto;
+	left: 43%;
+	padding: 0 5px;
+  }
   .ui-dialog {
     top: 3% !important;
     left: 2.5% !important;

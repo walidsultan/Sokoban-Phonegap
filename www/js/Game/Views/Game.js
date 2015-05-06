@@ -26,7 +26,7 @@
             $('body .gameStatusContainer').load('Views/Game.html', this.gameViewLoaded.bind(this));
         },
         gameViewLoaded: function () {
-			InitializeView('app.ui.SwipeHandler');
+            InitializeView('app.ui.SwipeHandler');
             InitializeView('app.ui.KeyboardHandler');
             InitializeView('app.ui.ModalsHandler');
             InitializeView('app.ui.StateManager');
@@ -35,7 +35,7 @@
             InitializeView('app.ui.LevelLoader');
 
             $(window).trigger('setLevelIndex', this.levelIndex);
-            $('.sffNavigator .back').on('touchstart mousedown',this.onBackMouseDown.bind(this));
+            $('.sffNavigator .back').on('touchstart mousedown', this.onBackMouseDown.bind(this));
             $('.sffNavigator .back').on('touchend mouseup', this.onBackMouseUp.bind(this));
             $('.sffNavigator .reload').click(this.reloadLevel.bind(this));
         },
@@ -51,6 +51,7 @@
         },
         setTimer: function () {
             $('body .gameStatusContainer .time').text(this.gameTime);
+            $('body .sffNavigator .timer').text(this.toHHMMSS(this.gameTime));
 
             this.gameTime++;
         },
@@ -86,14 +87,14 @@
         },
         onBackMouseDown: function (e) {
             var currentTime = (new Date()).getTime();
-            if (!this.mouseDown && (currentTime-this.lastMouseDownTime)>200) {
+            if (!this.mouseDown && (currentTime - this.lastMouseDownTime) > 200) {
                 this.mouseDown = true;
                 this.lastMouseDownTime = currentTime;
                 this.undoLastMovement();
             }
         },
         undoLastMovement: function () {
-            if(!this.mouseDown) return;
+            if (!this.mouseDown) return;
 
             $(window).trigger('undoLastMovement');
 
@@ -110,7 +111,7 @@
             $('.errorBlock').clone().appendTo('.gameContainer').css({
                 'left': targetBlock.domElement.position().left,
                 'top': targetBlock.domElement.position().top,
-                'width': targetBlock.domElement[0].getBoundingClientRect().width - borderWidth*2,
+                'width': targetBlock.domElement[0].getBoundingClientRect().width - borderWidth * 2,
                 'height': targetBlock.domElement[0].getBoundingClientRect().height - borderWidth * 2,
                 'display': 'block'
             });
@@ -119,6 +120,18 @@
             setTimeout(function () {
                 $('.gameContainer .errorBlock').remove();
             }, 500);
+        },
+        toHHMMSS : function (timeInt) {
+            var sec_num = parseInt(timeInt, 10);
+            var hours   = Math.floor(sec_num / 3600);
+            var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
+            var seconds = sec_num - (hours * 3600) - (minutes * 60);
+
+            if (hours   < 10) {hours   = "0"+hours;}
+            if (minutes < 10) {minutes = "0"+minutes;}
+            if (seconds < 10) {seconds = "0"+seconds;}
+            var time    = hours+':'+minutes+':'+seconds;
+            return time;
         }
     });
 })(skui.resolve('app.ui'));

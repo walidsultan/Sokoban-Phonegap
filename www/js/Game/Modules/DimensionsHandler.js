@@ -85,7 +85,7 @@
             } else {
                 //Adjust sff navigator position
                 var sffNavigatorIconSize = zoomFactor;
-                $('body .sffNavigator div').css('width', sffNavigatorIconSize)
+                $('body .sffNavigator div.icon').css('width', sffNavigatorIconSize)
                                                                      .css('height', sffNavigatorIconSize)
                                                                      .css('backgroundSize', sffNavigatorIconSize);
             }
