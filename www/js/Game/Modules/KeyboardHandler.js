@@ -58,9 +58,11 @@
             }
         },
         onDR: function () {
+			alert('s1');
             document.addEventListener("backbutton", deviceBackKeyDown, true);
         },
         deviceBackKeyDown: function () {
+			alert('s2');
             $(window).trigger('returnBack');
         },
         addInputToQueue: function (e, input) {
