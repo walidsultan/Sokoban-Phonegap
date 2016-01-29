@@ -1,6 +1,5 @@
 ﻿(function (ns) {
     ns.LevelSelector = skui.extend(function (data) {
-		      alert('s');
         this.loadLevelSelector();
         this.levelIndex = data.levelIndex;
     }, {
