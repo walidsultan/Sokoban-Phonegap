@@ -8,6 +8,9 @@
         $(window).on('animationEnded', this.setAnimationStatus.bind(this));
         $(window).on('clearInputQueue', this.clearInputQueue.bind(this));
         this.isAnimating = false;
+
+        //Handle device back button
+        document.addEventListener("deviceready", onDR, false);
     }, {
         handleKeyDownEvent: function (e) {
             e.preventDefault();
@@ -42,6 +45,9 @@
                 case 109:
                     $(window).trigger('loadPreviousLevel');
                     break;
+                case 27:
+                    $(window).trigger('returnBack');
+                    break;
             }
             if (direction != null) {
                 if (this.isAnimating) {
@@ -50,6 +56,12 @@
                     $(window).trigger('handleInput', { direction: direction });
                 }
             }
+        },
+        onDR: function () {
+            document.addEventListener("backbutton", deviceBackKeyDown, true);
+        },
+        deviceBackKeyDown: function () {
+            $(window).trigger('returnBack');
         },
         addInputToQueue: function (e, input) {
             this.inputQueue[this.inputQueue.length] = input;

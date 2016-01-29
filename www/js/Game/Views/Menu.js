@@ -6,6 +6,7 @@
         InitializeView('app.ui.DatabaseHandler');
         InitializeView('app.ui.DimensionsHandler');
         InitializeView('app.ui.UsersHandler');
+        InitializeView('app.ui.KeyboardHandler');
     }, {
         loadMenu: function (e, data) {
             $('body').prop('class', 'menu');
@@ -56,7 +57,7 @@
            
         },
         unloadMenu: function () {
-            $('body .menuContainer').remove();
+            $('body .menuContainer').html('').attr('style', '');
             $(window).off('resize.menu');
         }
     });

@@ -108,12 +108,13 @@ body.levelSelector {
   padding: 8px;
   cursor: pointer;
   background-color: white;
-  color: #333333;
+  color: #cccccc;
   float: left;
 }
 .levelSelectorContainer .level.unlocked {
   cursor: pointer;
   border-color: #11a72f;
+  color: #333333;
 }
 .sffNavigator {
   display: none;

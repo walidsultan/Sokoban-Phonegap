@@ -2,6 +2,8 @@
     ns.LevelSelector = skui.extend(function (data) {
         this.loadLevelSelector();
         this.levelIndex = data.levelIndex;
+        $(window).on('returnBack', this.returnToMenu.bind(this));
+        this.isGroupSelected = false;
     }, {
         unlockSolvedGroups: function () {
             var me = this;
@@ -15,21 +17,22 @@
                 }
             });
         },
-      loadLevelSelector: function (e, data) {
+        loadLevelSelector: function (e, data) {
             $('body').prop('class', 'levelSelector');
             $('body .levelSelectorContainer').load('Views/LevelSelector.html', this.levelSelectorLoaded.bind(this));
         },
         levelSelectorLoaded: function () {
             this.unlockSolvedGroups();
+            var me = this;
             $('body .levelSelectorContainer .title').click(function () {
                 if ($(this).hasClass('unlocked')) {
                     var groupIndex = $(this).parents('.levelGroup').attr('minIndex');
                     $(this).parents('.levelGroup').find('.content').appendTo('body .levelSelectorContainer').attr('groupIndex', groupIndex);
                     $('body .levelSelectorContainer .levelGroup').remove();
+                    me.isGroupSelected = true;
                 }
             });
 
-            var me = this;
             $('.levelSelectorContainer .level').click(function () {
                 if ($(this).hasClass('unlocked')) {
                     var groupIndex = $(this).parents('.content').attr('groupIndex');
@@ -41,8 +44,18 @@
             });
         },
         unloadLevelSelector: function () {
-            $('body .levelSelectorContainer').remove();
+            this.isGroupSelected = false;
+            $('body .levelSelectorContainer').html('').attr('style', '');
             $(window).off('resize.menu');
+        },
+        returnToMenu: function () {
+            if (this.isGroupSelected) {
+                $('body .levelSelectorContainer').load('Views/LevelSelector.html', this.levelSelectorLoaded.bind(this));
+            } else {
+                $(window).off();
+                this.unloadLevelSelector();
+                InitializeView('app.ui.Menu');
+            }
         }
     });
 })(skui.resolve('app.ui'));
