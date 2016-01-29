@@ -16,14 +16,10 @@
             });
         },
       loadLevelSelector: function (e, data) {
-            alert('s0');
-
             $('body').prop('class', 'levelSelector');
-            alert('s1');
             $('body .levelSelectorContainer').load('Views/LevelSelector.html', this.levelSelectorLoaded.bind(this));
         },
         levelSelectorLoaded: function () {
-            alert('s2');
             this.unlockSolvedGroups();
             $('body .levelSelectorContainer .title').click(function () {
                 if ($(this).hasClass('unlocked')) {
