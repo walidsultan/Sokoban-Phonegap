@@ -37,12 +37,12 @@
         },
         getLevelPath: function () {
             if (this.levelIndex <= 3) {
-                return 'Levels/Easy/level' + this.levelIndex + '.xml';
+                return 'Levels/Easy/Level' + this.levelIndex + '.xml';
             }
             else if (this.levelIndex <= 11) {
-                return 'Levels/SokobanJunior/level' + (this.levelIndex - 3) + '.xml';
+                return 'Levels/SokobanJunior/Level' + (this.levelIndex - 3) + '.xml';
             } else if (this.levelIndex <= 51) {
-                return 'Levels/MicroCosmos/level' + (this.levelIndex - 11) + '.xml';
+                return 'Levels/MicroCosmos/Level' + (this.levelIndex - 11) + '.xml';
             }else if (this.levelIndex <= 91) {
                 return 'Levels/nabokocosmos/naboko cosom ' + (this.levelIndex - 50) + '.xml';
             }
