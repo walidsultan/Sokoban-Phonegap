@@ -9,7 +9,16 @@
         init: function () {
             $('body').prop('class', 'sokoban');
             var levelPath = this.getLevelPath();
-            var levelDoc = this.loadXMLDoc(levelPath);
+			var levelDoc = loadXMLDoc(levelPath);
+            this.levelRows = levelDoc.getElementsByTagName("L");
+            this.levelRendered = false;
+
+            var levelIdentifier = levelDoc.getElementsByTagName("Level");
+            var levelWidth = levelIdentifier[0].getAttribute('Width');
+            var levelHeight = levelIdentifier[0].getAttribute('Height');
+            var levelId = levelIdentifier[0].getAttribute('Id');
+            $(window).trigger('updateLevelName', levelId);
+            $(window).trigger('setLevelDimensions', { width: levelWidth, height: levelHeight });
            
         },
         loadXMLDoc: function (levelPath) {
