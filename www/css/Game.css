@@ -19,6 +19,9 @@ body.menu {
   background-position: top center;
   background-size: 1280px;
 }
+body.levelSelector {
+  background-color: #006bb0;
+}
 .block {
   position: absolute;
   background-size: 60px;
@@ -71,6 +74,47 @@ body.menu {
   color: #aaa;
   cursor: default;
 }
+.levelSelectorContainer {
+  color: #FFF;
+  top: 0;
+  position: absolute;
+  width: 50%;
+  left: 26%;
+}
+.levelSelectorContainer .levelGroup .title {
+  border: 4px solid #CCC;
+  width: 100px;
+  height: 24px;
+  margin: 20px auto;
+  text-align: center;
+  padding: 35px;
+  background-color: #ddd;
+  color: #333;
+}
+.levelSelectorContainer .levelGroup .title.unlocked {
+  cursor: pointer;
+  border-color: #11a72f;
+  background-color: #fff;
+}
+.levelSelectorContainer .levelGroup .content {
+  display: none;
+}
+.levelSelectorContainer .level {
+  border: 4px solid #cccccc;
+  width: 58px;
+  height: 15px;
+  margin: 10px;
+  text-align: center;
+  padding: 8px;
+  cursor: pointer;
+  background-color: white;
+  color: #333333;
+  float: left;
+}
+.levelSelectorContainer .level.unlocked {
+  cursor: pointer;
+  border-color: #11a72f;
+}
 .sffNavigator {
   display: none;
 }
@@ -79,7 +123,11 @@ body.menu {
   position: absolute;
   border: solid 3px #ff0000;
 }
-
+.solverProcessing {
+  max-width: 100%;
+  max-height: 100%;
+}
+@media screen and (max-width: 900px), screen and (max-height: 680px) {
   body.sokoban {
     background: none;
   }
@@ -112,12 +160,13 @@ body.menu {
   }
   .sffNavigator .timer {
     display: block;
-	position: absolute;
-	background: white;
-	color: #666666;
-	margin: 0 auto;
-	left: 43%;
-	padding: 0 5px;
+    position: absolute;
+    background: white;
+    color: #666666;
+    margin: 0 auto;
+    left: 50%;
+    margin-left: -33px;
+    padding: 0 5px;
   }
   .ui-dialog {
     top: 3% !important;
@@ -173,4 +222,8 @@ body.menu {
   .ui-dialog .ui-dialog-buttonpane .ui-icon {
     display: none;
   }
-
+  .levelSelectorContainer {
+    width: 100%;
+    left: 0;
+  }
+}

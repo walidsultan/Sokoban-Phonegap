@@ -9,29 +9,17 @@
         init: function () {
             $('body').prop('class', 'sokoban');
             var levelPath = this.getLevelPath();
-            var levelDoc = loadXMLDoc(levelPath);
-            this.levelRows = levelDoc.getElementsByTagName("L");
-            this.levelRendered = false;
-
-            var levelIdentifier = levelDoc.getElementsByTagName("Level");
-            var levelWidth = levelIdentifier[0].getAttribute('Width');
-            var levelHeight = levelIdentifier[0].getAttribute('Height');
-            var levelId = levelIdentifier[0].getAttribute('Id');
-            $(window).trigger('updateLevelName', levelId);
-            $(window).trigger('setLevelDimensions', { width: levelWidth, height: levelHeight });
+            var levelDoc = this.loadXMLDoc(levelPath);
            
         },
         loadXMLDoc: function (levelPath) {
             var me = this;
-			$.get(levelPath, function (data) {
-				alert(data);
-			    var xmlDoc = $(data);
-                                alert(xmlDoc);
-				me.levelRows = xmlDoc.find("L");
+            $.get(levelPath, function (data) {
+                var xmlDoc = $(data);
+                me.levelRows = xmlDoc.find("L");
                 me.levelRendered = false;
                 var levelIdentifier = xmlDoc.find("Level");
                 var levelWidth = levelIdentifier[0].getAttribute('Width');
-				                alert(levelWidth);
                 var levelHeight = levelIdentifier[0].getAttribute('Height');
                 var levelId = levelIdentifier[0].getAttribute('Id');
                 $(window).trigger('updateLevelName', levelId);
@@ -40,12 +28,14 @@
         },
         getLevelPath: function () {
             if (this.levelIndex <= 3) {
-                return 'Levels/Easy/Level' + this.levelIndex + '.xml';
+                return 'Levels/Easy/level' + this.levelIndex + '.xml';
             }
             else if (this.levelIndex <= 11) {
-                return 'Levels/SokobanJunior/Level' + (this.levelIndex - 3) + '.xml';
-            } else {
+                return 'Levels/SokobanJunior/level' + (this.levelIndex - 3) + '.xml';
+            } else if (this.levelIndex <= 51) {
                 return 'Levels/MicroCosmos/level' + (this.levelIndex - 11) + '.xml';
+            }else if (this.levelIndex <= 91) {
+                return 'Levels/nabokocosmos/naboko cosom ' + (this.levelIndex - 50) + '.xml';
             }
         },
         drawLevel: function (e) {

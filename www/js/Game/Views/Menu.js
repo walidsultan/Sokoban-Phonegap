@@ -3,7 +3,7 @@
         $(window).on('resize.menu', this.setMenuDimensions.bind(this));
         $(window).on('loadMenu', this.loadMenu.bind(this));
 
-	InitializeView('app.ui.DatabaseHandler');
+        InitializeView('app.ui.DatabaseHandler');
         InitializeView('app.ui.DimensionsHandler');
         InitializeView('app.ui.UsersHandler');
     }, {
@@ -44,7 +44,8 @@
             });
             $('body .menuContainer .continue').click(function () {
                 if (!$(this).hasClass('disabled')) {
-                    InitializeView('app.ui.Game');
+                 //   InitializeView('app.ui.Game');
+                    InitializeView('app.ui.LevelSelector', {levelIndex:me.levelIndex});
                     me.unloadMenu();
                     $(window).trigger('setGameIndex', [me.levelIndex]);
                 }
@@ -55,7 +56,6 @@
            
         },
         unloadMenu: function () {
-            $('body').prop('class', '');
             $('body .menuContainer').remove();
             $(window).off('resize.menu');
         }

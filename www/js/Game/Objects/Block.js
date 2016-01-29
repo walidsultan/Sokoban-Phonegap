@@ -28,7 +28,8 @@
                                                .css('height', skui.zoomFactor)
                                                .css('width', skui.zoomFactor)
                                                .prop('data-left', left)
-                                               .prop('data-top', top);
+                                               .prop('data-top', top)
+                                                .prop('data-type',  this.type);
             $('body .gameContainer').append(this.domElement);
 
             switch (this.type) {

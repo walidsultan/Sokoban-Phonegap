@@ -33,6 +33,9 @@
                 case 82://Reload
                     $(window).trigger('reloadLevel');
                     break;
+                case 83://Solve
+                    $(window).trigger('solve');
+                    break;
                 case 107:
                     $(window).trigger('loadNextLevel');
                     break;

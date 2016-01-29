@@ -33,6 +33,7 @@
             InitializeView('app.ui.PathFinder');
             InitializeView('app.ui.CollisionDetector');
             InitializeView('app.ui.LevelLoader');
+            InitializeView('app.ui.LevelSolver');
 
             $(window).trigger('setLevelIndex', this.levelIndex);
             $('.sffNavigator .back').on('touchstart mousedown', this.onBackMouseDown.bind(this));
