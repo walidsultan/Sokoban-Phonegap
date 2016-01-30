@@ -26,4 +26,7 @@
 	</platform>
 	<icon src="icon.png" />
 	
+	 <gap:plugin name="org.apache.cordova.core.vibration" />
+	 <gap:plugin name="org.apache.cordova.dialogs" version="0.2.6" />
+	
 </widget>
