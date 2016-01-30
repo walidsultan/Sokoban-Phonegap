@@ -2,7 +2,7 @@
     FastClick.attach(document.body);
     InitializeView('app.ui.Menu');
 	
-    document.addEventListener("deviceready", onDR, false);
+  //  document.addEventListener("deviceready", onDR, false);
 });
 
 function onDR(){
