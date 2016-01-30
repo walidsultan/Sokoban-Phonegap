@@ -58,11 +58,11 @@
             }
         },
         onDR: function () {
-			alert('s1');
+			alert('s113');
             document.addEventListener("backbutton", this.deviceBackKeyDown.bind(this), true);
         },
         deviceBackKeyDown: function () {
-			alert('s2');
+			alert('s223);
             $(window).trigger('returnBack');
         },
         addInputToQueue: function (e, input) {
