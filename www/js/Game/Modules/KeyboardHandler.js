@@ -10,7 +10,7 @@
         this.isAnimating = false;
 
         //Handle device back button
-        document.addEventListener("deviceready", this.onDR.bind(this), false);
+        //document.addEventListener("deviceready", this.onDR.bind(this), false);
     }, {
         handleKeyDownEvent: function (e) {
             e.preventDefault();
