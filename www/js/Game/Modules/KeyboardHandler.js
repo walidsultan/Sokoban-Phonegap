@@ -8,9 +8,7 @@
         $(window).on('animationEnded', this.setAnimationStatus.bind(this));
         $(window).on('clearInputQueue', this.clearInputQueue.bind(this));
         this.isAnimating = false;
-
-		document.removeEventListener("deviceready", this.onDeviceReady.bind(this), false);
-        document.addEventListener("deviceready", this.onDeviceReady.bind(this), false);
+       
     }, {
         handleKeyDownEvent: function (e) {
             e.preventDefault();
@@ -76,15 +74,6 @@
         clearInputQueue: function (e) {
             this.inputQueue.length = 0;
             this.isAnimating = false;
-        },
-		onDeviceReady: function () {
-		//	alert('s1');
-			document.removeEventListener("backbutton", this.backKeyDown.bind(this), true);
-			document.addEventListener("backbutton", this.backKeyDown.bind(this), true);
-		},
-	    backKeyDown:function() {
-		//	alert('go back!');
-			$(window).trigger('returnBack');
-		}
+        }
     });
 })(skui.resolve('app.ui'));

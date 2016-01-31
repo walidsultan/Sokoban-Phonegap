@@ -2,7 +2,7 @@
     ns.LevelSelector = skui.extend(function (data) {
         this.loadLevelSelector();
         this.levelIndex = data.levelIndex;
-        $(window).on('returnBack', this.returnToMenu.bind(this));
+		$(window).on('returnBack', this.returnToMenu.bind(this));
         this.isGroupSelected = false;
     }, {
         unlockSolvedGroups: function () {
