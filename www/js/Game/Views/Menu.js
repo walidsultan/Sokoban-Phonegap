@@ -2,6 +2,7 @@
     ns.Menu = skui.extend(function () {
         $(window).on('resize.menu', this.setMenuDimensions.bind(this));
         $(window).on('loadMenu', this.loadMenu.bind(this));
+        $(window).on('returnBack', this.exitApp.bind(this));
 
         InitializeView('app.ui.DatabaseHandler');
         InitializeView('app.ui.DimensionsHandler');
@@ -59,6 +60,11 @@
         unloadMenu: function () {
             $('body .menuContainer').html('').attr('style', '');
             $(window).off('resize.menu');
-        }
+        },
+		exitApp:function(){
+			if($('body').prop('class')=='menu'){
+				navigator.app.exitApp();
+			}
+		}
     });
 })(skui.resolve('app.ui'));

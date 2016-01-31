@@ -50,6 +50,7 @@
         },
         returnToMenu: function () {
             if (this.isGroupSelected) {
+				this.isGroupSelected = false;
                 $('body .levelSelectorContainer').load('Views/LevelSelector.html', this.levelSelectorLoaded.bind(this));
             } else {
                 $(window).off();

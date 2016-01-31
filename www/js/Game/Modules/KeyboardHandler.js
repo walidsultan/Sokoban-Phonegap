@@ -9,8 +9,8 @@
         $(window).on('clearInputQueue', this.clearInputQueue.bind(this));
         this.isAnimating = false;
 
-        //Handle device back button
-        //document.addEventListener("deviceready", this.onDR.bind(this), false);
+		document.removeEventListener("deviceready", this.onDeviceReady.bind(this), false);
+        document.addEventListener("deviceready", this.onDeviceReady.bind(this), false);
     }, {
         handleKeyDownEvent: function (e) {
             e.preventDefault();
@@ -57,14 +57,6 @@
                 }
             }
         },
-        onDR: function () {
-			alert('s113');
-            document.addEventListener("backbutton", this.deviceBackKeyDown.bind(this), true);
-        },
-        deviceBackKeyDown: function () {
-			alert('s223);
-            $(window).trigger('returnBack');
-        },
         addInputToQueue: function (e, input) {
             this.inputQueue[this.inputQueue.length] = input;
         },
@@ -84,6 +76,15 @@
         clearInputQueue: function (e) {
             this.inputQueue.length = 0;
             this.isAnimating = false;
-        }
+        },
+		onDeviceReady: function () {
+		//	alert('s1');
+			document.removeEventListener("backbutton", this.backKeyDown.bind(this), true);
+			document.addEventListener("backbutton", this.backKeyDown.bind(this), true);
+		},
+	    backKeyDown:function() {
+		//	alert('go back!');
+			$(window).trigger('returnBack');
+		}
     });
 })(skui.resolve('app.ui'));
