@@ -14,6 +14,7 @@
                     //Unlock individual levels
                     var maxLevel = me.levelIndex - $(this).attr('minIndex');
                     $(this).find('.level:lt(' + maxLevel + ')').addClass('unlocked');
+					$(this).find('.level:eq(' + (maxLevel-1) + ')').addClass('last');
                 }
             });
         },

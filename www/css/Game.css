@@ -116,6 +116,9 @@ body.levelSelector {
   border-color: #11a72f;
   color: #333333;
 }
+.levelSelectorContainer .level.unlocked.last{
+  background-color:#89ecfe;
+}
 .sffNavigator {
   display: none;
 }
