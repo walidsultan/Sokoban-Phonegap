@@ -55,6 +55,10 @@
             $('body .menuContainer .howToPlay').click(function () {
                 window.open('https://youtu.be/RBYWxzooN8M', '_system');
             });
+
+            $('body .menuContainer .privacyPolicy').click(function () {
+                window.open('https://sokoban-js.s3.us-east-1.amazonaws.com/privacy-policy/privacy_policy.html', '_system');
+            });
            
         },
         unloadMenu: function () {

@@ -230,4 +230,8 @@ body.levelSelector {
     width: 100%;
     left: 0;
   }
+  .privacyPolicy
+  {
+    font-size: smaller;
+  }
 }
